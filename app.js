@@ -6,6 +6,8 @@ const app = express();
 app.use( express.static('public') )
 
 const ENVIRONMENT = process.env.ENVIRONMENT || 'development';
+const PORT = process.env.PORT || 3000;
+
 var urlDB = 'mongodb://localhost:27017/test';
 
 // Connection URL
@@ -31,4 +33,4 @@ MongoClient.connect(urlDB, (err, db) => {
 
 });
 
-app.listen(3000, ()=> console.log("Listening on 3000..."))
+app.listen(PORT, ()=> console.log("Listening on 3000..."))
