@@ -1,5 +1,3 @@
-"strict mode"
-
 const express = require('express')
 const MongoClient = require('mongodb').MongoClient;
 
@@ -8,7 +6,7 @@ const app = express();
 app.use( express.static('public') )
 
 const ENVIRONMENT = process.env.ENVIRONMENT || 'development';
-let urlDB = 'mongodb://localhost:27017/test';
+var urlDB = 'mongodb://localhost:27017/test';
 
 // Connection URL
 if (ENVIRONMENT === 'production') {
