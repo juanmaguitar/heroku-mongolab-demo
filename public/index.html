@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Hi from skylab coders!</h1>
+	<button id="get-restaurants">get restaurants</button>
+	<ul id="restaurants"></ul>
+
+	<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script>
+
+		$("#get-restaurants").on("click", () => {
+
+			$.ajax({
+				url: '/restaurants'
+			})
+			.done(function( dataRestaurants ) {
+				const items = dataRestaurants.map( rest => {
+					return `<li>${rest.name}</li>`
+				})
+				$("#restaurants").html( items.join("") )
+			})
+
+		})
+
+
+	</script>
+</body>
+</html>

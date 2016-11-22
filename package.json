@@ -1,0 +1,13 @@
+{
+  "name": "demo-heroku-mongolab",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon app"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.11",
+    "nodemon": "^1.11.0"
+  }
+}
